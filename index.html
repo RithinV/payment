@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Call 100 (Emergency)</title>
+    <title>Open Google Pay</title>
 </head>
 <body>
-    <p>Click the button below to call 100 (Emergency):</p>
-    <a href="tel:100">
-        <button>Call 100</button>
-    </a>
+    <h1>Click the button to open Google Pay</h1>
+    <button onclick="openGooglePay()">Open Google Pay</button>
+
+    <script>
+        function openGooglePay() {
+            window.location.href = 'gpay://'; // Try to open Google Pay app
+            setTimeout(function() {
+                window.location.href = 'https://pay.google.com'; // Redirect to Google Pay website if the app is not available
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
